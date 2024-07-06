@@ -1,0 +1,245 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Demo_DOAN.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .wrapper {
+            margin: 0 auto;
+            position: relative;
+            font-family: 'Helvetica';
+        }
+
+        #logo_phone {
+            width: 35px;
+            position: absolute;
+        }
+
+        .wrapper .header1 {
+            display: flex;
+            background-color: rgb(56,56,56);
+            min-height: 5px;
+            height: 40px;
+            justify-content: center;
+        }
+
+        .header2 {
+            background-color: #fff;
+            min-height: 60px;
+            display: flex;
+        }
+
+            .header2 .menu_header2 {
+                display: flex;
+                margin-left: 20px;
+                list-style: none;
+            }
+
+                .header2 .menu_header2 li {
+                    margin: 20px 30px;
+                    padding-right: 8px;
+                }
+
+                    .header2 .menu_header2 li a {
+                        font-weight: bold;
+                        font-size: 16px;
+                        color: rgb(56,56,56);
+                        text-decoration: none;
+                    }
+
+                        .header2 .menu_header2 li a:hover {
+                            color: #df2323;
+                        }
+
+            .header2 .form-group {
+                margin-top: -10px;
+            }
+
+                .header2 .form-group .form-control {
+                    border: 1px solid #c6c6c6;
+                    height: 30px;
+                    border-radius: 3px;
+                }
+
+        .footer {
+            display: block;
+        }
+
+        .wrapper .footer .footer_chinh {
+            display: flex;
+            background-color: rgb(34,34,34);
+            min-height: 380px;
+        }
+
+        .left #menu_footerleft li {
+            list-style: none;
+            color: #e8e8e8;
+            font-size: 14px;
+            padding: 3px 0px;
+        }
+
+            .left #menu_footerleft li a {
+                text-decoration: none;
+                color: #e8e8e8;
+                font-size: 14px;
+                line-height: 30px;
+            }
+
+                .left #menu_footerleft li a:hover {
+                    color: #df2323;
+                }
+
+        .title_footer {
+            color: #e8e8e8;
+            font-size: 16px;
+        }
+
+        #menu_footercenter {
+            margin-left: -20px;
+        }
+
+            #menu_footercenter li {
+                list-style: none;
+                color: #e8e8e8;
+                font-size: 14px;
+                padding: 3px 0px;
+            }
+
+                #menu_footercenter li a {
+                    text-decoration: none;
+                    color: #e8e8e8;
+                    font-size: 14px;
+                    line-height: 30px;
+                }
+
+                    #menu_footercenter li a:hover {
+                        color: #df2323;
+                    }
+
+        .footer_phu {
+            margin-top: -10px;
+            padding-top: 25px;
+            background-color: #171616;
+            min-height: 200px;
+            display: flex;
+        }
+
+            .footer_phu #footer_phu_left p {
+                color: #e8e8e8;
+                padding-left: 50px;
+                font-size: 14px;
+            }
+
+            .footer_phu hr {
+                background-color: gray;
+                height: 0.1px;
+                width: 500px;
+                margin-left: 50px;
+                border-width: 1px;
+            }
+
+            .footer_phu #footer_phu_right {
+                display: flex;
+                margin-left: 350px;
+            }
+
+        .store_login {
+            margin-left: 20px;
+        }
+
+            .store_login tr td a {
+                list-style: none;
+                text-decoration: none;
+                color: rgb(56,56,56);
+                padding: 6px;
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <div class="header2">
+                <a href="Default.aspx">
+                    <img style="height: 45px; margin-top: 10px; margin-left: 45px;" src="img/logo.jpg" /></a>
+                <ul class="menu_header2">
+                    <li><a href="Default.aspx">TRANG CHỦ</a></li>
+                    <li><a href="GioiThieu.aspx">GIỚI THIỆU</a></li>
+                    <li><a href="LienHe.aspx">LIÊN HỆ</a></li>
+                    <li><a href="Podcast.aspx">PODCAST</a></li>
+                    <li><a href="QuangCao.aspx">QUẢNG CÁO</a></li>
+                </ul>
+                <table class="store_login">
+                    <tr>
+                        <td>
+                            <img style="width: 30px;" src="img/icongiohang.png" />
+                        </td>
+                        <td><a href="DatBao.aspx"><b>ĐẶT BÁO</b></a></td>
+                        <td>
+                            <img style="width: 30px;" src="img/dangnhap.png" /></td>
+                        <td><a id="tieudedangnhap" runat="server" href="DangNhap.aspx"><b>ĐĂNG NHẬP</b></a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="wp_content">
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="content2">
+            </div>
+            <div class="footer">
+                <div class="footer_chinh" style="width: 100%">
+                    <div class="left" style="width: 30%">
+                        <img src="img/logo.jpg" style="width: 180px; margin-left: 30px; margin-top: 10px;" />
+                        <ul id="menu_footerleft">
+                            <li>
+                                <img style="width: 18px; margin: -3px 10px;" src="img/next.png" /><a style="margin-top: -15px;" href="GioiThieu.aspx">Giới thiệu</a></li>
+                            <li>
+                                <img style="width: 18px; margin: -3px 10px;" src="img/next.png" /><a style="margin-top: -15px;" href="LienHe.aspx">Liên hệ</a></li>
+                            <li style="margin-top: 4px;">
+                                <img style="width: 15px; margin: -3px 10px;" src="img/phone.png" />Hotline : 0949.542.183</li>
+                            <li style="margin-top: 4px; padding: 6px 0px;">
+                                <img style="width: 15px; margin: -3px 10px;" src="img/gmail.png" />Gmail : thaibahung22082002@gmail.com</li>
+                        </ul>
+
+                    </div>
+                    <div class="center" style="width: 30%">
+                        <br />
+                        <h4 class="title_footer">Hướng dẫn khách hàng :</h4>
+                        <ul id="menu_footercenter">
+                            <li>
+                                <img style="width: 18px; margin: -3px 10px;" src="img/next.png" /><a style="margin-top: -15px;" href="Podcast.aspx">Podcast</a></li>
+                            <li>
+                                <img style="width: 18px; margin: -3px 10px;" src="img/next.png" /><a style="margin-top: -15px;" href="QuangCao.aspx">Quảng cáo</a></li>
+                        </ul>
+                    </div>
+                    <div class="right" style="width: 40%">
+                        <br />
+                        <h4 class="title_footer">Địa chỉ tòa soạn :</h4>
+                        <br />
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2855.431423551432!2d108.20749375056734!3d16.06028127260758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219b416e135cd%3A0x401b57932be120d9!2zMjIwIFBoYW4gVGhhbmgsIFRo4bqhYyBHacOhbiwgVGhhbmggS2jDqiwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1713282438118!5m2!1svi!2s" width="500" height="280"
+                            style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="footer_phu">
+                    <div id="footer_phu_left">
+                        <p><b>Giấy phép kinh doanh số</b> : 31739QCS/BDHN</p>
+                        <p><b>Quyền sở hữu trí tuệ số</b> : QUSHTT_982413</p>
+                        <p>Copyright 2024 · Thiết kế và phát triển bởi DTU News</p><br />
+                        <p style="font-size:20px; font-weight:bold;">Số lượt truy cập:<asp:Label ID="lbSoluot" runat="server" Text=""></asp:Label></p>
+                    </div>
+                    <div id="footer_phu_right">
+                        <img src="img/bocongthuong.png" style="width: 260px; height: 150px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
